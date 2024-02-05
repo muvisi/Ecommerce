@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Tourney&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tourney&family=Yomogi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&display=swap');
+
+
+.navbar {
+  width: 100%;
+  transition: all 0.3s ease-out 0s !important;
+  padding: 0.3rem 2rem !important;
+  font-size: 1.2rem !important;  
+  cursor: pointer;
+}
+
+.navbar-brand {
+  color:  hotpink !important;
+}
+
+@media (max-width: 767px) {
+  .navbar {
+    padding: 1rem 2rem !important;
+    font-size: 1.4rem !important;
+    background-color: linear-gradient(to left,  hotpink, rgb(11, 11, 11));
+  }
+  .logotxt{
+    font-size: 1.8rem !important;
+
+  }
+  .navbar-nav .nav-item a::after {
+    display: none !important;
+  }
+  .nav-link {
+    padding: 0.7rem 1rem !important;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .logotxt{
+    font-size: 1.7rem !important;
+
+  }  
+}
+
+
+.navbar-nav .nav-item a::after {
+  content: "";
+  position: relative;
+  display: block;
+  height: 5px;
+  width: 0;
+  border-radius: 16px;
+  background:   hotpink;
+  bottom: 1px;
+  left: 0;
+  z-index: -1;
+  transition: all 0.3s ease-out 0s;
+}
+
+.navbar-nav .nav-item a:hover::after {
+  width: 100%;
+}
+
+.navbar ul {
+  list-style: none;
+  display: inline-block;
+  padding: 0 100px;
+}
+
+.navbar ul li {
+  display: inline-flex;
+  padding: 28px 30px;
+  padding-top: 10px;
+  margin-top: 0;
+  height: 2rem; 
+}
+
+
+.navbar ul li a {
+  color: black;
+  text-decoration: none;
+}
+
+.logotxt {
+  font-size: 50px;
+  font-weight: 450;  
+  font-family: 'Delius Swash Caps', cursive;
+  color: black;
+  text-decoration: none;
+}
+
+.logospn {
+  color:mediumvioletred;
+}

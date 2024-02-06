@@ -1,0 +1,8 @@
+.shopc {
+    background-size: cover;
+    background-position: center;
+    width:100%;
+    padding: 10px 5px;
+    min-height: 100vh;
+    margin-top: 6rem;
+}

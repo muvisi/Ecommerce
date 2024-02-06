@@ -6,32 +6,22 @@ import { ShopComponent } from './components/shop/shop.component';
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
-  {
     path: 'home',
-    component:LandingpageComponent
-  },
-  {
-    path: '',
-    redirectTo: 'about',
-    pathMatch: 'full'
+    component: LandingpageComponent
   },
   {
     path: 'about',
-    component:AboutComponent
-  },
-  {
-    path: '',
-    redirectTo: 'shop',
-    pathMatch: 'full',
+    component: AboutComponent
   },
   {
     path: 'shop',
-    component:ShopComponent
-  }
+    component: ShopComponent
+  },
+  {
+    path: '',
+    redirectTo: '/home', 
+    pathMatch: 'full'
+  },
 ];
 
 @NgModule({

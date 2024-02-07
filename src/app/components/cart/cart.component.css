@@ -1,0 +1,87 @@
+.cart-container {
+max-width: 800px;
+margin: 20px auto;
+padding: 10px;
+background-color: #fff;
+border: 1px solid #ddd;
+border-radius: 8px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Cart item styles */
+.cart-item {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 10px;
+padding: 10px;
+border-bottom: 1px solid #eee;
+}
+.cart-image img {
+max-width: 80px;
+max-height: 80px;
+margin-right: 10px;
+}
+
+.product-name {
+font-weight: bold;
+}
+
+/* Quantity controls styles */
+.quantity-controls {
+display: flex;
+align-items: center;
+}
+
+.quantity-button {
+cursor: pointer;
+padding: 5px 10px;
+margin: 0 5px;
+background-color: #3498db;
+color: #fff;
+border: none;
+border-radius: 4px;
+}
+
+.quantity-display {
+padding: 5px 10px;
+margin: 0 5px;
+background-color: #f1f1f1;
+border: 1px solid #ddd;
+border-radius: 4px;
+}
+
+/* Item details styles */
+.item-details {
+text-align: right;
+}
+
+.unit-price {
+font-weight: bold;
+margin-right: 10px;
+}
+
+.remove-button {
+cursor: pointer;
+padding: 5px 10px;
+background-color: #e74c3c;
+color: #fff;
+border: none;
+border-radius: 4px;
+}
+
+/* Total section styles */
+.total {
+margin-top: 20px;
+text-align: right;
+}
+
+.total-label {
+font-weight: bold;
+margin-right: 10px;
+}
+
+.total-price {
+font-weight: bold;
+}
+  

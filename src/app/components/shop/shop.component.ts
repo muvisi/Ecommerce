@@ -26,6 +26,7 @@ export class ShopComponent {
   };
   categoryList: any[] = [];
   productsList: any[] = [];
+  cart: any[] = [];
 
   constructor(private productService: ProductService) {}
 
@@ -55,42 +56,20 @@ export class ShopComponent {
       }
     );
   }
-  // onUpdate() {
-  //   this.productSrv.saveProduct(this.productObj).subscribe((res:any)=>{
-  //     debugger;
-  //     if(res.result) {
-  //       alert("Product Created");
-  //       this.getProducts();
-  //     } else {
-  //       alert(res.message)
-  //     }
-  //   })
-  // }
-  // onSave() {
-  //   this.productSrv.saveProduct(this.productObj).subscribe((res:any)=>{
-  //     debugger;
-  //     if(res.result) {
-  //       alert("Product Updated");
-  //       this.getProducts();
-  //     } else {
-  //       alert(res.message)
-  //     }
-  //   })
-  // }
-  // onDelete(item: any) {
-  //   const isDelete = confirm('Are you Sure want to delte');
-  //   if(isDelete) {
-  //     this.productSrv.deleteProduct(item.productId).subscribe((res:any)=>{
-  //       debugger;
-  //       if(res.result) {
-  //         alert("Product Deleted");
-  //         this.getProducts();
-  //       } else {
-  //         alert(res.message)
-  //       }
-  //     })
-  //   }
-  // }
+  addToCart(product: any) {
+    console.log('Adding to cart:', product);
+    const existingProduct = this.cart.find(item => item.productId === product.productId);
+  
+    if (existingProduct) {
+      existingProduct.quantity += 1;
+    } else {
+      const cartItem = { ...product, quantity: 1 };
+      this.cart.push(cartItem);
+    }
+  
+    console.log('Updated Cart:', this.cart);
+  }
+  
 
   onEdit(item: any) {
     this.productObj = item;

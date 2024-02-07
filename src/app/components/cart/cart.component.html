@@ -1,1 +1,22 @@
-<p>cart works!</p>
+<article class="cart-container" style="margin-top: 10rem; height: 100vh;">
+    <div *ngFor="let item of cart; trackBy: trackByFn" class="cart-item">
+      <div class="cart-image">
+        <img [src]="item.productImageUrl" alt="" />
+        <p class="product-name">{{ item.productName }}</p>
+      </div>
+      <div class="quantity-controls">
+        <button (click)="handleChange(item, -1)" class="quantity-button">-</button>
+        <button class="quantity-display">{{ item.quantity }}</button>
+        <button (click)="handleChange(item, 1)" class="quantity-button">+</button>
+      </div>
+      <div class="item-details">
+        <span class="unit-price">Kshs {{ item.productPrice }}</span>
+        <button (click)="handleRemove(item.productId)" class="remove-button">Remove</button>
+      </div>
+    </div>
+    <div class="total">
+      <span class="total-label">Your Total is:</span>
+      <span class="total-price">Kshs.{{ productPrice }}</span>
+    </div>
+  </article>
+  

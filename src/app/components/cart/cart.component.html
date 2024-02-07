@@ -1,4 +1,4 @@
-<article class="cart-container" style="margin-top: 10rem; height: 100vh;">
+<article class="cart-container" style="margin-top: 7rem; height: 100%;">
     <div *ngFor="let item of _cart; trackBy: trackByFn" class="cart-item">
       <div class="cart-image">
         <img [src]="item.productImageUrl" alt="{{ item.productName }} Image" />
@@ -14,7 +14,7 @@
         <button (click)="handleChange(item, 1)" class="quantity-button">+</button>
       </div>
       <div class="item-details">
-        <span class="unit-price">Kshs {{ item.productPrice }}</span>
+        <span class="unit-price"> {{ roundPrice(item.productPrice) }} </span>
         <span class="item-total">Kshs {{ item.productPrice * item.quantity }}</span>
         <button (click)="handleRemove(item.productId)" class="remove-button">Remove</button>
       </div>

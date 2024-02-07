@@ -4,16 +4,6 @@ import { CartService } from '../../service/cart.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
-interface Product {
-  productId: number;
-  productSku: string;
-  productName: string;
-  productImageUrl: string;
-  productPrice: number;
-  quantity?: number;
-}
-
-
 @Component({
   selector: 'app-shop',
   standalone: true,

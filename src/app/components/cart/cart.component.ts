@@ -32,7 +32,6 @@ export class CartComponent implements OnChanges, OnDestroy {
   constructor(private cartService: CartService) {
     this.cartSubscription = this.cartService.getCartItems().subscribe(items => {
       this.cart = items;
-      console.log('Updated Cart:', this.cart); 
     });
   }
 
@@ -62,5 +61,17 @@ export class CartComponent implements OnChanges, OnDestroy {
 
   private calculateTotalPrice(): void {
     this.productPrice = this._cart.reduce((total, item) => total + item.productPrice * item.quantity, 0);
+  }
+
+  roundPrice(price: number): string {
+    const roundedPrice = Math.round(price * 100) / 100;
+    return `Kshs. ${roundedPrice.toFixed(2)}`;
+  }
+
+  placeOrder(): void {
+    alert("Order placed successfully!");
+
+    this._cart = []; 
+    this.calculateTotalPrice();
   }
 }

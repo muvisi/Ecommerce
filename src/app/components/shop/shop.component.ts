@@ -38,12 +38,12 @@ export class ShopComponent implements OnInit {
   productsList: any[] = [];
   cart: any[] = [];
 
-  constructor(private productService: ProductService, private cartService: CartService) {} // Inject CartService
+  constructor(private productService: ProductService, private cartService: CartService) {} 
 
   ngOnInit(): void {
     this.getProducts();
     this.getCategories();
-    this.cartService.getCartItems().subscribe(items => { // Subscribe to cart items changes
+    this.cartService.getCartItems().subscribe(items => { 
       this.cart = items;
     });
   }
@@ -71,7 +71,6 @@ export class ShopComponent implements OnInit {
   }
 
   addToCart(product: any) {
-    console.log('Adding to cart:', product);
     this.cartService.addToCart(product);
   }
 

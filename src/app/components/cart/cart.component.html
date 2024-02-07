@@ -20,8 +20,9 @@
       </div>
     </div>
     <div class="total">
-      <span class="total-label">Your Total is:</span>
-      <span class="total-price">Kshs.{{ productPrice }}</span>
-    </div>
+        <span class="total-label">Your Total is: </span>
+        <span class="total-price"> {{ roundPrice(productPrice) }} </span>
+        <button class="place-order-button" *ngIf="_cart.length > 0" (click)="placeOrder()">Place Order</button>
+      </div>
   </article>
   

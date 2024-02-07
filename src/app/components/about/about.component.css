@@ -16,7 +16,6 @@ line-height: 1.5;
 margin-bottom: 1rem;
 }
 
-/* Highlight headings within the paragraph */
 .about-text h3 {
 font-size: 1.25rem;
 margin-bottom: 0.5rem;
@@ -24,7 +23,6 @@ border-bottom: 1px solid #ddd;
 padding-bottom: 0.5rem;
 }
 
-/* Media responsiveness adjustments */
 @media (max-width: 768px) {
 .about-container {
     max-width: 100%;
@@ -39,16 +37,14 @@ padding-bottom: 0.5rem;
     font-size: 0.9rem;
 }
 
-/* Adjust heading styles for smaller screens */
 .about-text h3 {
     font-size: 1rem;
 }
 }
 
 @media (max-width: 576px) {
-/* Additional adjustments for very small screens, if needed */
+
 .about-text {
-    /* Adjust line-height or other styles as required */
 }
 }
   

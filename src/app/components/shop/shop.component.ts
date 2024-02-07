@@ -1,7 +1,17 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../service/product.service';
+import { CartService } from '../../service/cart.service'; 
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+
+interface Product {
+  productId: number;
+  productSku: string;
+  productName: string;
+  productImageUrl: string;
+  productPrice: number;
+  quantity?: number;
+}
 
 
 @Component({
@@ -11,7 +21,7 @@ import { ProductService } from '../../service/product.service';
   templateUrl: './shop.component.html',
   styleUrls: ['./shop.component.css']
 }) 
-export class ShopComponent {
+export class ShopComponent implements OnInit {
 
   isSidePanelVisible: boolean = false;
   productObj: any = {
@@ -28,11 +38,14 @@ export class ShopComponent {
   productsList: any[] = [];
   cart: any[] = [];
 
-  constructor(private productService: ProductService) {}
+  constructor(private productService: ProductService, private cartService: CartService) {} // Inject CartService
 
   ngOnInit(): void {
     this.getProducts();
     this.getCategories();
+    this.cartService.getCartItems().subscribe(items => { // Subscribe to cart items changes
+      this.cart = items;
+    });
   }
 
   getProducts() {
@@ -56,26 +69,16 @@ export class ShopComponent {
       }
     );
   }
+
   addToCart(product: any) {
     console.log('Adding to cart:', product);
-    const existingProduct = this.cart.find(item => item.productId === product.productId);
-  
-    if (existingProduct) {
-      existingProduct.quantity += 1;
-    } else {
-      const cartItem = { ...product, quantity: 1 };
-      this.cart.push(cartItem);
-    }
-  
-    console.log('Updated Cart:', this.cart);
+    this.cartService.addToCart(product);
   }
-  
 
   onEdit(item: any) {
     this.productObj = item;
     this.openSidePanel();
   }
-
 
   openSidePanel() {
     this.isSidePanelVisible = true;
@@ -84,6 +87,4 @@ export class ShopComponent {
   closeSidePanel() {
     this.isSidePanelVisible = false;
   }
-
-
 }

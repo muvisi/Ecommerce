@@ -1,31 +1,54 @@
-
-.about-content h1 {
-    text-align: center;
-    color: rgb(14, 14, 14) !important;
-    margin-bottom: 2rem;
-    margin-top: 3rem;
-}
-
-.aboutp {
-    color: black;
-    margin-top: 1rem;
-    
-}
 .about-container {
-    background-color:white;
-    padding: 30px;
-    margin-bottom: 150px;
+padding: 2rem;
+max-width: 800px;
+margin: 0 auto;
+margin-top: 7rem;
 }
-  
+
 .about-title {
-    color: #006600;
-    margin-bottom: 20px;
-    text-align: center;
+font-size: 1.5rem;
+margin-bottom: 1rem;
+}
+
+.about-text {
+font-size: 1rem;
+line-height: 1.5;
+margin-bottom: 1rem;
+}
+
+/* Highlight headings within the paragraph */
+.about-text h3 {
+font-size: 1.25rem;
+margin-bottom: 0.5rem;
+border-bottom: 1px solid #ddd;
+padding-bottom: 0.5rem;
+}
+
+/* Media responsiveness adjustments */
+@media (max-width: 768px) {
+.about-container {
+    max-width: 100%;
+    padding: 1rem;
+}
+
+.about-title {
+    font-size: 1.25rem;
+}
+
+.about-text {
+    font-size: 0.9rem;
+}
+
+/* Adjust heading styles for smaller screens */
+.about-text h3 {
+    font-size: 1rem;
+}
+}
+
+@media (max-width: 576px) {
+/* Additional adjustments for very small screens, if needed */
+.about-text {
+    /* Adjust line-height or other styles as required */
+}
 }
   
-.about-text {
-    font-size: 18px;
-    line-height: 1.5;
-    margin-bottom: 20px;
-    text-align: center;
-}

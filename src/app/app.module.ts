@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { LandingpageComponent } from './components/landingpage/landingpage.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
-import { CartComponent } from './components/cart/cart.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AboutComponent } from './components/about/about.component';
@@ -17,7 +16,6 @@ import { AboutComponent } from './components/about/about.component';
     LandingpageComponent,
     FooterComponent,
     CheckoutComponent,
-    CartComponent,
     OrdersComponent,
     NavbarComponent,
     AboutComponent,
